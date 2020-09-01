@@ -5,7 +5,9 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Nav>
-      <Logo href="">Eli</Logo>
+      <Logo href="">
+        Eli<span>Codes</span>
+      </Logo>
       <Hamburger onClick={() => setIsOpen(!isOpen)}>
         <span />
         <span />
@@ -22,12 +24,19 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
 const MenuLink = styled.a`
   padding: 1rem 2rem;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  color: rgb(131, 58, 180);
+  color: #67bc98;
+  transition: all 0.3s ease-in;
+  font-size: 0.9rem;
+
+  &:hover {
+    color: #7b7fda;
+  }
 `;
 
 const Nav = styled.div`
@@ -37,14 +46,23 @@ const Nav = styled.div`
   align-items: center;
   flex-wrap: wrap;
   background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 `;
 
 const Logo = styled.a`
   padding: 1rem 0;
-  color: rgb(131, 58, 180);
+  color: #7b7fda;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 800;
   font-size: 1.7rem;
+
+  span {
+    font-weight: 300;
+    font-size: 1.3rem;
+  }
 `;
 
 const Menu = styled.div`
@@ -71,7 +89,7 @@ const Hamburger = styled.div`
   span {
     height: 2px;
     width: 25px;
-    background: rgb(131, 58, 180);
+    background: #7b7fda;
     margin-bottom: 4px;
     border-radius: 5px;
   }
